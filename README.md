@@ -10,7 +10,8 @@
 - [x] Eslint
 - [x] Prettier
 - [x] Husky: pre-commit, commit message
-- [ ] Vscode configuration
+- [x] Vscode configuration
+- [ ] Debugging
 - [ ] Storybook
 - [ ] Webpack with multiple environment
 - [ ] Hexagon architecture
@@ -96,4 +97,10 @@
         ```
 7. Vscode setup
    Create a folder .vscode and update the content of configuration in **setting.json** file.
+8. Debugging
 
+    ```bash 
+    touch .vscode/launch.json
+    ```
+    <b>Note that</b>, we need to open project at this root directory.
+    [Documentation](https://nextjs.org/docs/pages/building-your-application/configuring/debugging)
