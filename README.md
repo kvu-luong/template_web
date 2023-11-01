@@ -11,13 +11,15 @@
 - [x] Prettier
 - [x] Husky: pre-commit, commit message
 - [x] Vscode configuration
-- [ ] Debugging
-- [ ] Storybook
+- [x] Debugging
+- [x] Directory structure
+- [x] Storybook
+- [ ] Component template
 - [ ] Webpack with multiple environment
 - [ ] Hexagon architecture
 
 
-1. Create a NextJs application
+##### Create a NextJs application
    ```bash
     npx create-next-app@latest
    ```
@@ -104,3 +106,21 @@
     ```
     <b>Note that</b>, we need to open project at this root directory.
     [Documentation](https://nextjs.org/docs/pages/building-your-application/configuring/debugging)
+
+9. Directory structure simple with three folder 
+    - components: UI components
+    - lib: Business logic 
+    - pages: routes/pages as required Next.js structures
+
+10. Storybook
+    ```bash 
+    npx sb init --builder webpack5
+    ```
+    Update .eslintrc.json file 
+    Update package.json with content "resolutions"
+    ```bash
+        "resolutions": {
+        "webpack": "^5"
+    }
+    ```
+11. Component Template
