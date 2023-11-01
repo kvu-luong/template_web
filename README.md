@@ -17,9 +17,10 @@
 - [ ] Component template
 - [ ] Webpack with multiple environment
 - [ ] Hexagon architecture
+- [ ] Deployment pipeline
 
 
-##### Create a NextJs application
+1. Create a NextJs application
    ```bash
     npx create-next-app@latest
    ```
@@ -123,4 +124,6 @@
         "webpack": "^5"
     }
     ```
+    [Document installation](https://storybook.js.org/blog/get-started-with-storybook-and-next-js/)
 11. Component Template
+12. role with array type for multiple roles 
