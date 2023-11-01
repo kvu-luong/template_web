@@ -9,7 +9,7 @@
 - [x] Engine lock/ Vscode
 - [x] Eslint
 - [x] Prettier
-- [ ] Husky: pre-commit, commit lint
+- [x] Husky: pre-commit, commit message
 - [ ] Storybook
 - [ ] Webpack with multiple environment
 - [ ] Hexagon architecture
@@ -30,7 +30,7 @@
    ```
 4. Adding lint package
     ```bash 
-        #running lint
+        #running lint to check error warning with eslint
         yarn lint
     ```
     [Eslint rules](https://eslint.org/docs/latest/rules/)
@@ -61,3 +61,34 @@
             # switch version of node
             nvm use 20.5.1
         ```
+6. Adding Husky
+   - Setup husky: pre-commit and pre-commit 
+    ```bash
+    yarn add -D husky
+
+    #Install husky 
+    npx husky install 
+
+    #Adding pre commit 
+    npx husky add .husky/pre-commit "yarn lint"
+
+    #Adding push commit
+    npx husky add .husky/pre-push "yarn build"
+
+    #Adding husky script
+    npm pkg set scripts.prepare="husky install"
+    ```
+
+    - Start setup commit lint
+    [Reference documentation](https://github.com/conventional-changelog/commitlint)
+
+    ```bash 
+        #Install commit lint
+        yarn add -D @commitlint/{config-conventional,cli}
+
+        #Create file commit lint
+        echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+
+        #Adding script
+        npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'
+    ```
