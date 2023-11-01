@@ -6,10 +6,11 @@
    ```
 ### Check list:
 - [x] Create project
-- [x] Engine lock/ Vscode
+- [x] Engine lock
 - [x] Eslint
 - [x] Prettier
 - [x] Husky: pre-commit, commit message
+- [ ] Vscode configuration
 - [ ] Storybook
 - [ ] Webpack with multiple environment
 - [ ] Hexagon architecture
@@ -63,32 +64,36 @@
         ```
 6. Adding Husky
    - Setup husky: pre-commit and pre-commit 
-    ```bash
-    yarn add -D husky
+        ```bash
+        yarn add -D husky
 
-    #Install husky 
-    npx husky install 
+        #Install husky 
+        npx husky install 
 
-    #Adding pre commit 
-    npx husky add .husky/pre-commit "yarn lint"
+        #Adding pre commit 
+        npx husky add .husky/pre-commit "yarn lint"
 
-    #Adding push commit
-    npx husky add .husky/pre-push "yarn build"
+        #Adding push commit
+        npx husky add .husky/pre-push "yarn build"
 
-    #Adding husky script
-    npm pkg set scripts.prepare="husky install"
-    ```
+        #Adding husky script
+        npm pkg set scripts.prepare="husky install"
+        ```
 
     - Start setup commit lint
-    [Reference documentation](https://github.com/conventional-changelog/commitlint)
+  
+        [Reference documentation](https://github.com/conventional-changelog/commitlint)
 
-    ```bash 
-        #Install commit lint
-        yarn add -D @commitlint/{config-conventional,cli}
+        ```bash 
+            #Install commit lint
+            yarn add -D @commitlint/{config-conventional,cli}
 
-        #Create file commit lint
-        echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+            #Create file commit lint
+            echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
 
-        #Adding script
-        npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'
-    ```
+            #Adding script
+            npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'
+        ```
+7. Vscode setup
+   Create a folder .vscode and update the content of configuration in **setting.json** file.
+
